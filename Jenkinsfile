@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage ('Starting downstream job ') {
+            steps {
+                build job: 'pipeline-int-2/master'
+            }
+        }
         stage ('Compile Stage') {
 
             steps {
